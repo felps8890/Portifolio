@@ -1,0 +1,1220 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Felipe Barsotti | Portfólio — Desenvolvimento Web</title>
+  <meta name="description" content="Portfólio de Felipe Barsotti Prado de Carvalho, estudante do curso Técnico em Tecnologia da Informação (turma 03TI3), com foco em desenvolvimento web.">
+  <meta name="author" content="Felipe Barsotti Prado de Carvalho">
+  <meta name="theme-color" content="#05070e">
+  <meta property="og:title" content="Felipe Barsotti | Portfólio">
+  <meta property="og:description" content="Estudante de TI com interesse em programação e desenvolvimento web.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/images/felipe.jpg">
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+
+  <!-- Bootstrap 5 e ícones (arquivos locais para funcionar também offline) -->
+  <link rel="stylesheet" href="assets/vendor/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/vendor/bootstrap-icons/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script>document.documentElement.classList.remove('no-js');</script>
+</head>
+<body>
+
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <!-- =========================================================
+       NAVBAR — fixa, esconde ao rolar para baixo e reaparece ao subir
+       ========================================================= -->
+  <header class="site-nav" id="siteNav">
+    <div class="container d-flex align-items-center justify-content-between">
+      <a class="brand" href="#inicio" aria-label="Felipe Barsotti — início">
+        <span class="brand__mark">FB</span>
+        <span>felipe<span class="brand__dot">.</span>dev</span>
+      </a>
+
+      <nav id="desktopNav" class="desktop-links" aria-label="Navegação principal">
+        <a class="nav-link" href="#inicio" data-spy="inicio">Início</a>
+        <a class="nav-link" href="#sobre" data-spy="sobre">Sobre</a>
+        <div class="dropdown">
+          <a class="nav-link dropdown-toggle" data-spy="conhecimento" href="#conhecimento" role="button" data-bs-toggle="dropdown" aria-expanded="false">Conhecimento</a>
+          <ul class="dropdown-menu dropdown-dark-glass">
+            <li><a class="dropdown-item" href="#humanas"><i class="bi bi-people"></i> Ciências Humanas</a></li>
+            <li><a class="dropdown-item" href="#natureza"><i class="bi bi-eyedropper"></i> Ciências da Natureza</a></li>
+            <li><a class="dropdown-item" href="#matematica"><i class="bi bi-calculator"></i> Matemática</a></li>
+            <li><a class="dropdown-item" href="#linguagens"><i class="bi bi-chat-quote"></i> Linguagens</a></li>
+          </ul>
+        </div>
+        <div class="dropdown">
+          <a class="nav-link dropdown-toggle" data-spy="tendencias" href="#tendencias" role="button" data-bs-toggle="dropdown" aria-expanded="false">Tendências</a>
+          <ul class="dropdown-menu dropdown-dark-glass">
+            <li><a class="dropdown-item" href="#ciberseguranca"><i class="bi bi-shield-lock"></i> Cibersegurança</a></li>
+            <li><a class="dropdown-item" href="#blockchain"><i class="bi bi-boxes"></i> Blockchain</a></li>
+            <li><a class="dropdown-item" href="#automacao"><i class="bi bi-robot"></i> Automação e Robótica</a></li>
+            <li><a class="dropdown-item" href="#edge"><i class="bi bi-hdd-network"></i> Edge Computing</a></li>
+          </ul>
+        </div>
+        <a class="nav-link" href="#projetos" data-spy="projetos">Projetos</a>
+        <a class="nav-link" href="#contato" data-spy="contato">Contato</a>
+      </nav>
+
+      <a class="btn btn-accent btn-sm d-none d-lg-inline-flex align-items-center gap-2" href="#contato">
+        <i class="bi bi-send"></i> Fale comigo
+      </a>
+
+      <button class="nav-toggle" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileNav" aria-controls="mobileNav" aria-label="Abrir menu">
+        <i class="bi bi-list"></i>
+      </button>
+    </div>
+    <div class="progress-bar-top" id="scrollProgress" aria-hidden="true"></div>
+  </header>
+
+  <!-- Menu mobile -->
+  <div class="offcanvas offcanvas-end nav-offcanvas" tabindex="-1" id="mobileNav" aria-labelledby="mobileNavLabel">
+    <div class="offcanvas-header border-bottom" style="border-color: var(--border) !important;">
+      <span class="brand" id="mobileNavLabel"><span class="brand__mark">FB</span> Menu</span>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Fechar menu"></button>
+    </div>
+    <div class="offcanvas-body d-flex flex-column">
+      <nav class="nav flex-column" aria-label="Navegação mobile">
+        <a class="nav-link" href="#inicio">Início</a>
+        <a class="nav-link" href="#sobre">Sobre mim</a>
+        <a class="nav-link" href="#conhecimento">Áreas do Conhecimento</a>
+        <div class="sub-links">
+          <a class="nav-link" href="#humanas">Ciências Humanas</a>
+          <a class="nav-link" href="#natureza">Ciências da Natureza</a>
+          <a class="nav-link" href="#matematica">Matemática</a>
+          <a class="nav-link" href="#linguagens">Linguagens</a>
+        </div>
+        <a class="nav-link" href="#tendencias">Tendências Tecnológicas</a>
+        <div class="sub-links">
+          <a class="nav-link" href="#ciberseguranca">Cibersegurança</a>
+          <a class="nav-link" href="#blockchain">Blockchain</a>
+          <a class="nav-link" href="#automacao">Automação e Robótica</a>
+          <a class="nav-link" href="#edge">Edge Computing</a>
+        </div>
+        <a class="nav-link" href="#projetos" data-spy="projetos">Projetos</a>
+        <a class="nav-link" href="#contato" data-spy="contato">Contato</a>
+      </nav>
+      <a class="btn btn-accent mt-auto" href="#contato"><i class="bi bi-send me-2"></i>Fale comigo</a>
+    </div>
+  </div>
+
+  <main id="conteudo">
+
+    <!-- =========================================================
+         HERO — Apresentação pessoal
+         ========================================================= -->
+    <section class="hero" id="inicio" aria-labelledby="heroTitle">
+      <div class="bg-grid"></div>
+      <div class="glow glow--1"></div>
+      <div class="glow glow--2"></div>
+
+      <div class="container">
+        <div class="row align-items-center g-4 g-lg-5">
+          <div class="col-lg-7">
+            <div class="status-pill reveal">
+              <span class="dot"></span> Estudante de TI · Turma 03TI3
+            </div>
+
+            <h1 class="hero__title reveal" id="heroTitle" style="--d:.05s">
+              Felipe Barsotti
+              <span class="surname">Prado de Carvalho</span>
+            </h1>
+
+            <p class="hero__role reveal" style="--d:.1s" aria-live="polite">
+              <span class="tok-c">&gt;</span> <span id="typed">Desenvolvimento Web</span><span class="cursor" aria-hidden="true"></span>
+            </p>
+
+            <p class="hero__text reveal" style="--d:.15s">
+              Sou estudante de Tecnologia da Informação e tenho interesse em programação, desenvolvimento web e tecnologia.
+              Estou constantemente buscando aprender novas ferramentas e aprimorar minhas habilidades para desenvolver soluções digitais.
+            </p>
+
+            <div class="d-flex flex-wrap gap-3 reveal" style="--d:.2s">
+              <a href="#projetos" class="btn btn-accent d-inline-flex align-items-center gap-2">
+                Conhecer meus projetos <i class="bi bi-arrow-right"></i>
+              </a>
+              <a href="#contato" class="btn btn-ghost d-inline-flex align-items-center gap-2">
+                <i class="bi bi-envelope"></i> Entrar em contato
+              </a>
+            </div>
+
+            <div class="tech-strip reveal" style="--d:.25s" aria-label="Principais tecnologias">
+              <span class="tech-chip"><i class="bi bi-filetype-html c-html"></i> HTML5</span>
+              <span class="tech-chip"><i class="bi bi-filetype-css c-css"></i> CSS3</span>
+              <span class="tech-chip"><i class="bi bi-filetype-js c-js"></i> JavaScript</span>
+              <span class="tech-chip"><i class="bi bi-filetype-php c-php"></i> PHP</span>
+              <span class="tech-chip"><i class="bi bi-database c-sql"></i> MySQL</span>
+            </div>
+
+            <div class="hero__meta reveal" style="--d:.3s">
+              <div class="meta-item">
+                <span class="meta-item__label">Idade</span>
+                <span class="meta-item__value">17 anos</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-item__label">Turma</span>
+                <span class="meta-item__value">03TI3</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-item__label">Curso</span>
+                <span class="meta-item__value">Técnico em TI</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-5">
+            <figure class="portrait reveal" style="--d:.15s">
+              <div class="portrait__frame">
+                <div class="portrait__inner">
+                  <img src="assets/images/felipe.jpg" alt="Foto de Felipe Barsotti Prado de Carvalho" width="800" height="1000" fetchpriority="high">
+                  <figcaption class="portrait__caption">
+                    <span>// felipe.barsotti</span>
+                    <span>03TI3</span>
+                  </figcaption>
+                </div>
+              </div>
+              <div class="portrait__float portrait__float--a">
+                <i class="bi bi-mortarboard"></i>
+                <div><small>Curso</small><strong>Tecnologia da Informação</strong></div>
+              </div>
+              <div class="portrait__float portrait__float--b">
+                <i class="bi bi-code-slash"></i>
+                <div><small>Foco atual</small><strong>Desenvolvimento web</strong></div>
+              </div>
+            </figure>
+          </div>
+        </div>
+      </div>
+
+      <a href="#sobre" class="scroll-hint" aria-label="Rolar para a seção Sobre">
+        <span>Explore</span>
+        <span class="scroll-hint__line"></span>
+      </a>
+    </section>
+
+    <!-- =========================================================
+         SOBRE — perfil, hard skills, soft skills e experiência
+         ========================================================= -->
+    <section class="section section--alt section--border" id="sobre" aria-labelledby="sobreTitle">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-lg-8 reveal">
+            <span class="eyebrow">01 · Sobre mim</span>
+            <h2 class="section-title" id="sobreTitle">Perfil profissional</h2>
+            <p class="section-lead">
+              Estou no início da minha trajetória em tecnologia. Meu foco é entender bem os fundamentos —
+              estrutura, estilo, lógica e dados — para construir interfaces e sistemas que funcionem de verdade.
+            </p>
+          </div>
+        </div>
+
+        <div class="row g-4">
+          <!-- Hard skills -->
+          <div class="col-lg-5 reveal">
+            <div class="glass about-card">
+              <div class="d-flex align-items-center gap-3 mb-4">
+                <span class="icon-box"><i class="bi bi-cpu"></i></span>
+                <div>
+                  <h3 class="mb-0">Hard skills</h3>
+                  <small class="text-muted-3">Habilidades técnicas</small>
+                </div>
+              </div>
+              <ul class="skill-list">
+                <li class="skill">
+                  <span class="skill__icon" style="color:#ff7a45">HTML</span>
+                  <div><div class="skill__name">HTML5</div><div class="skill__desc">Estrutura e semântica das páginas</div></div>
+                </li>
+                <li class="skill">
+                  <span class="skill__icon" style="color:#3b9dff">CSS</span>
+                  <div><div class="skill__name">CSS3</div><div class="skill__desc">Estilo, layout e responsividade</div></div>
+                </li>
+                <li class="skill">
+                  <span class="skill__icon" style="color:#f7d64a">JS</span>
+                  <div><div class="skill__name">JavaScript</div><div class="skill__desc">Interatividade e lógica no navegador</div></div>
+                </li>
+                <li class="skill">
+                  <span class="skill__icon" style="color:#8f9bff">PHP</span>
+                  <div><div class="skill__name">PHP</div><div class="skill__desc">Lógica no servidor e páginas dinâmicas</div></div>
+                </li>
+                <li class="skill">
+                  <span class="skill__icon" style="color:#4fd1c5">SQL</span>
+                  <div><div class="skill__name">MySQL</div><div class="skill__desc">Modelagem e consultas em banco de dados</div></div>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-7">
+            <div class="row g-4">
+              <!-- Soft skills -->
+              <div class="col-12 reveal" style="--d:.08s">
+                <div class="glass about-card">
+                  <div class="d-flex align-items-center gap-3 mb-4">
+                    <span class="icon-box"><i class="bi bi-person-heart"></i></span>
+                    <div>
+                      <h3 class="mb-0">Soft skills</h3>
+                      <small class="text-muted-3">Habilidades comportamentais</small>
+                    </div>
+                  </div>
+                  <div class="soft-grid">
+                    <div class="soft">
+                      <span class="icon-box"><i class="bi bi-lightning-charge"></i></span>
+                      <div>
+                        <h4>Facilidade para aprender</h4>
+                        <p>Consigo absorver conceitos novos rapidamente e colocar em prática em pouco tempo.</p>
+                      </div>
+                    </div>
+                    <div class="soft">
+                      <span class="icon-box"><i class="bi bi-kanban"></i></span>
+                      <div>
+                        <h4>Organização</h4>
+                        <p>Gosto de dividir o trabalho em etapas e manter arquivos e código bem estruturados.</p>
+                      </div>
+                    </div>
+                    <div class="soft">
+                      <span class="icon-box"><i class="bi bi-people"></i></span>
+                      <div>
+                        <h4>Trabalho em equipe</h4>
+                        <p>Colaboro com os colegas, divido tarefas e troco conhecimento durante os projetos.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Experiência -->
+              <div class="col-12 reveal" style="--d:.12s">
+                <div class="glass about-card">
+                  <div class="d-flex align-items-center gap-3 mb-4">
+                    <span class="icon-box"><i class="bi bi-journal-code"></i></span>
+                    <div>
+                      <h3 class="mb-0">Experiência</h3>
+                      <small class="text-muted-3">Formação e prática</small>
+                    </div>
+                  </div>
+                  <div class="timeline-item">
+                    <span class="timeline-item__date">Em andamento</span>
+                    <h4 class="h6 mt-1 mb-2" style="font-family:var(--font-body);letter-spacing:0">Curso Técnico em Tecnologia da Informação · Turma 03TI3</h4>
+                    <p class="mb-0" style="font-size:.95rem">
+                      Estou aprendendo desenvolvimento web e programação no curso técnico de TI, desenvolvendo projetos práticos
+                      e adquirindo conhecimentos sobre construção de interfaces, lógica de programação e desenvolvimento de sistemas.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         ÁREAS DO CONHECIMENTO — 4 seções individuais
+         ========================================================= -->
+    <section class="section pb-0" id="conhecimento" aria-labelledby="conhecimentoTitle">
+      <div class="container">
+        <div class="row mb-2">
+          <div class="col-lg-8 reveal">
+            <span class="eyebrow">02 · Áreas do Conhecimento</span>
+            <h2 class="section-title" id="conhecimentoTitle">O Ensino Médio também me ensinou a programar</h2>
+            <p class="section-lead">
+              Programar não é só escrever código. Cada área do Ensino Médio contribuiu de um jeito diferente para a forma
+              como eu penso, organizo e resolvo problemas. Aqui conto como isso aconteceu comigo.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2.1 Ciências Humanas -->
+    <section class="area" id="humanas" aria-labelledby="humanasTitle">
+      <div class="container">
+        <div class="row g-4 g-lg-5">
+          <div class="col-lg-6 reveal">
+            <div class="area__number" aria-hidden="true">01</div>
+            <h3 class="area__title" id="humanasTitle"><span class="icon-box"><i class="bi bi-people"></i></span> Ciências Humanas</h3>
+            <div class="area__text">
+              <p>
+                Em História, Geografia, Sociologia e Filosofia eu aprendi que todo problema tem um contexto. Antes de dar uma resposta,
+                a gente precisa entender quem está envolvido, o que causou a situação e quais são as consequências. Hoje eu faço exatamente
+                isso antes de abrir o editor de código: pergunto quem vai usar o sistema e qual problema real ele precisa resolver.
+              </p>
+              <p>
+                O pensamento crítico que treinei analisando textos, notícias e debates também me ajuda a não aceitar a primeira solução
+                que aparece. Eu comparo alternativas, penso em quem pode ser prejudicado por uma decisão e tento enxergar o lado de pessoas
+                diferentes de mim — o que é essencial para criar sites acessíveis e fáceis de usar.
+              </p>
+              <p>
+                Entender o comportamento humano me mostrou que tecnologia é feita para pessoas. Um botão no lugar errado, um texto confuso
+                ou um formulário longo demais fazem o usuário desistir. Por isso, quando desenvolvo uma interface, penso primeiro na experiência
+                de quem está do outro lado da tela.
+              </p>
+            </div>
+            <div class="area__links">
+              <span class="tag"><i class="bi bi-search"></i> Análise de problemas</span>
+              <span class="tag"><i class="bi bi-person-check"></i> Foco no usuário</span>
+              <span class="tag"><i class="bi bi-universal-access"></i> Acessibilidade</span>
+              <span class="tag"><i class="bi bi-shield-check"></i> Ética e dados</span>
+            </div>
+          </div>
+          <div class="col-lg-6 reveal" style="--d:.1s">
+            <div class="area__aside">
+              <div class="code-card">
+                <div class="code-card__bar"><span></span><span></span><span></span><em>levantamento.js</em></div>
+<pre><span class="tok-c">// Antes de programar: entender o contexto</span>
+<span class="tok-k">const</span> problema = {
+  quem:     <span class="tok-s">"alunos da escola"</span>,
+  situacao: <span class="tok-s">"avisos espalhados em vários grupos"</span>,
+  impacto:  <span class="tok-s">"perdem prazos e atividades"</span>,
+  objetivo: <span class="tok-s">"um mural único e fácil de consultar"</span>
+};
+
+<span class="tok-c">// A solução nasce da necessidade, não da ferramenta</span>
+<span class="tok-f">planejarSolucao</span>(problema);</pre>
+              </div>
+              <div class="insight">
+                <i class="bi bi-lightbulb"></i>
+                <span>Interpretar um problema social é muito parecido com levantar os requisitos de um sistema: as duas coisas começam ouvindo as pessoas.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2.2 Ciências da Natureza -->
+    <section class="area section--alt" id="natureza" aria-labelledby="naturezaTitle">
+      <div class="container">
+        <div class="row g-4 g-lg-5 flex-lg-row-reverse">
+          <div class="col-lg-6 reveal">
+            <div class="area__number" aria-hidden="true">02</div>
+            <h3 class="area__title" id="naturezaTitle"><span class="icon-box"><i class="bi bi-eyedropper"></i></span> Ciências da Natureza</h3>
+            <div class="area__text">
+              <p>
+                Física, Química e Biologia me apresentaram o método científico: observar um fenômeno, levantar uma hipótese, testar
+                e analisar o resultado. Quando um código meu não funciona, eu sigo o mesmo caminho. Observo o erro, imagino o que pode
+                estar causando, faço uma alteração pequena e confiro se a hipótese estava certa.
+              </p>
+              <p>
+                Nas aulas de laboratório aprendi a mudar uma variável por vez para saber o que realmente influenciou o experimento.
+                Na programação, isso virou uma regra para depurar: não altero cinco coisas de uma vez, senão não descubro qual delas resolveu
+                — ou qual criou um problema novo.
+              </p>
+              <p>
+                Também aprendi a registrar os resultados e a repetir os testes. Isso se conecta diretamente com testar um sistema em
+                situações diferentes: campos vazios, valores negativos, telas pequenas. Um algoritmo, assim como um experimento,
+                só é confiável depois de ser testado.
+              </p>
+            </div>
+            <div class="area__links">
+              <span class="tag"><i class="bi bi-eye"></i> Observação</span>
+              <span class="tag"><i class="bi bi-question-diamond"></i> Hipóteses</span>
+              <span class="tag"><i class="bi bi-bug"></i> Depuração</span>
+              <span class="tag"><i class="bi bi-check2-square"></i> Testes</span>
+            </div>
+          </div>
+          <div class="col-lg-6 reveal" style="--d:.1s">
+            <div class="area__aside">
+              <div class="code-card">
+                <div class="code-card__bar"><span></span><span></span><span></span><em>experimento.test.js</em></div>
+<pre><span class="tok-c">// Hipótese: o cálculo quebra com valores negativos</span>
+<span class="tok-k">function</span> <span class="tok-f">testarDesconto</span>() {
+  <span class="tok-k">const</span> resultado = <span class="tok-f">aplicarDesconto</span>(<span class="tok-n">-50</span>, <span class="tok-n">10</span>);
+
+  <span class="tok-c">// Resultado esperado x resultado observado</span>
+  console.<span class="tok-f">assert</span>(resultado &gt;= <span class="tok-n">0</span>,
+    <span class="tok-s">"Hipótese confirmada: precisa validar a entrada"</span>);
+}
+
+<span class="tok-f">testarDesconto</span>(); <span class="tok-c">// repetir até o teste passar</span></pre>
+              </div>
+              <div class="insight">
+                <i class="bi bi-lightbulb"></i>
+                <span>Depurar um código é aplicar o método científico: observar, formular hipóteses, testar e concluir.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2.3 Matemática -->
+    <section class="area" id="matematica" aria-labelledby="matematicaTitle">
+      <div class="container">
+        <div class="row g-4 g-lg-5">
+          <div class="col-lg-6 reveal">
+            <div class="area__number" aria-hidden="true">03</div>
+            <h3 class="area__title" id="matematicaTitle"><span class="icon-box"><i class="bi bi-calculator"></i></span> Matemática</h3>
+            <div class="area__text">
+              <p>
+                A Matemática é a área que mais aparece no meu código, mesmo quando eu não percebo. Quando estudei funções, aprendi que
+                existe uma entrada, uma regra e uma saída — e é exatamente assim que uma função em JavaScript ou PHP funciona.
+                As incógnitas da álgebra viraram variáveis que guardam valores e mudam durante a execução.
+              </p>
+              <p>
+                O raciocínio lógico das questões de “se… então” me ajudou a entender estruturas condicionais como <code>if</code> e
+                <code>else</code>. Já as sequências e os padrões que aparecem em progressões me prepararam para as estruturas de repetição,
+                como <code>for</code> e <code>while</code>, que executam a mesma regra várias vezes.
+              </p>
+              <p>
+                Mas o principal foi aprender a resolver problemas em etapas: ler o enunciado, separar os dados, escolher a operação
+                certa e conferir o resultado. Um algoritmo nada mais é do que essa resolução escrita de um jeito que o computador entende.
+              </p>
+            </div>
+            <div class="area__links">
+              <span class="tag"><i class="bi bi-diagram-3"></i> Raciocínio lógico</span>
+              <span class="tag"><i class="bi bi-braces"></i> Funções e variáveis</span>
+              <span class="tag"><i class="bi bi-signpost-split"></i> Condições</span>
+              <span class="tag"><i class="bi bi-arrow-repeat"></i> Repetição</span>
+            </div>
+          </div>
+          <div class="col-lg-6 reveal" style="--d:.1s">
+            <div class="area__aside">
+              <div class="code-card">
+                <div class="code-card__bar"><span></span><span></span><span></span><em>media.js</em></div>
+<pre><span class="tok-c">// f(notas) = soma das notas ÷ quantidade</span>
+<span class="tok-k">function</span> <span class="tok-f">calcularMedia</span>(notas) {
+  <span class="tok-k">let</span> soma = <span class="tok-n">0</span>;            <span class="tok-c">// variável</span>
+
+  <span class="tok-k">for</span> (<span class="tok-k">const</span> nota <span class="tok-k">of</span> notas) { <span class="tok-c">// repetição</span>
+    soma += nota;            <span class="tok-c">// operação</span>
+  }
+
+  <span class="tok-k">const</span> media = soma / notas.length;
+  <span class="tok-k">return</span> media &gt;= <span class="tok-n">6</span>        <span class="tok-c">// condição</span>
+    ? <span class="tok-s">"Aprovado"</span>
+    : <span class="tok-s">"Recuperação"</span>;
+}
+
+<span class="tok-f">calcularMedia</span>([<span class="tok-n">7.5</span>, <span class="tok-n">5</span>, <span class="tok-n">8</span>]); <span class="tok-c">// "Aprovado"</span></pre>
+              </div>
+              <div class="insight">
+                <i class="bi bi-lightbulb"></i>
+                <span>Uma função matemática e uma função de programação têm a mesma ideia: entrada → regra → saída.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2.4 Linguagens -->
+    <section class="area section--alt" id="linguagens" aria-labelledby="linguagensTitle">
+      <div class="container">
+        <div class="row g-4 g-lg-5 flex-lg-row-reverse">
+          <div class="col-lg-6 reveal">
+            <div class="area__number" aria-hidden="true">04</div>
+            <h3 class="area__title" id="linguagensTitle"><span class="icon-box"><i class="bi bi-chat-quote"></i></span> Linguagens</h3>
+            <div class="area__text">
+              <p>
+                Em Língua Portuguesa aprendi que interpretar um texto é diferente de apenas lê-lo. Essa habilidade faz muita diferença
+                quando recebo o enunciado de uma atividade ou o pedido de um cliente: preciso entender o que está escrito e também o que
+                a pessoa realmente quer dizer.
+              </p>
+              <p>
+                A redação me ensinou a organizar as ideias com começo, meio e fim. Eu levo isso para o código: dou nomes claros para
+                variáveis e funções, separo os arquivos por responsabilidade e escrevo comentários e documentação, como um README,
+                para que outra pessoa consiga entender o que fiz.
+              </p>
+              <p>
+                Já o Inglês está presente em quase tudo na programação — nas palavras reservadas das linguagens, nas mensagens de erro e
+                nas documentações oficiais. E as aulas de Artes e Educação Física também ajudaram: a primeira na percepção de cores e
+                composição visual, a segunda no trabalho em equipe. No fim, um bom sistema também é uma forma de comunicação com o usuário.
+              </p>
+            </div>
+            <div class="area__links">
+              <span class="tag"><i class="bi bi-book"></i> Interpretação</span>
+              <span class="tag"><i class="bi bi-file-earmark-text"></i> Documentação</span>
+              <span class="tag"><i class="bi bi-translate"></i> Inglês técnico</span>
+              <span class="tag"><i class="bi bi-chat-dots"></i> Comunicação</span>
+            </div>
+          </div>
+          <div class="col-lg-6 reveal" style="--d:.1s">
+            <div class="area__aside">
+              <div class="code-card">
+                <div class="code-card__bar"><span></span><span></span><span></span><em>validacao.js</em></div>
+<pre><span class="tok-c">/**
+ * Valida o e-mail digitado pelo usuário.
+ * Nomes claros e comentários tornam o código
+ * fácil de ler — como um bom texto.
+ */</span>
+<span class="tok-k">function</span> <span class="tok-f">emailEhValido</span>(email) {
+  <span class="tok-k">return</span> <span class="tok-s">/^[^\s@]+@[^\s@]+\.[^\s@]+$/</span>.<span class="tok-f">test</span>(email);
+}
+
+<span class="tok-c">// Mensagem pensada para quem lê, não para a máquina</span>
+<span class="tok-f">mostrarErro</span>(<span class="tok-s">"Digite um e-mail válido, ex.: nome@dominio.com"</span>);</pre>
+              </div>
+              <div class="insight">
+                <i class="bi bi-lightbulb"></i>
+                <span>Código é lido muito mais vezes do que é escrito. Escrever bem é uma habilidade técnica.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         TENDÊNCIAS TECNOLÓGICAS — 4 seções individuais
+         ========================================================= -->
+    <section class="section section--border pb-0" id="tendencias" aria-labelledby="tendenciasTitle">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 reveal">
+            <span class="eyebrow">03 · Tendências Tecnológicas</span>
+            <h2 class="section-title" id="tendenciasTitle">Tecnologias que estão moldando o futuro</h2>
+            <p class="section-lead">
+              Um resumo técnico — e direto ao ponto — sobre quatro áreas que todo desenvolvedor precisa conhecer:
+              cibersegurança, blockchain, automação e robótica, e edge computing.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3.1 Cibersegurança -->
+    <section class="trend" id="ciberseguranca" aria-labelledby="ciberTitle">
+      <div class="container">
+        <div class="row g-4 g-lg-5 align-items-center">
+          <div class="col-lg-7 reveal">
+            <span class="trend__badge"><i class="bi bi-shield-lock"></i> Tendência 01</span>
+            <h3 class="trend__title" id="ciberTitle">Cibersegurança</h3>
+            <p class="trend__intro">
+              Cibersegurança é o conjunto de práticas, tecnologias e processos usados para proteger sistemas, redes e dados contra
+              acessos não autorizados, ataques e vazamentos. Ela se apoia em três pilares: <strong>confidencialidade</strong>
+              (só quem deve acessa), <strong>integridade</strong> (os dados não são alterados indevidamente) e
+              <strong>disponibilidade</strong> (o sistema funciona quando precisa).
+            </p>
+          </div>
+          <div class="col-lg-5 reveal" style="--d:.1s">
+            <figure class="illustration m-0">
+              <svg viewBox="0 0 400 260" role="img" aria-labelledby="svgCiberT">
+                <title id="svgCiberT">Ilustração: texto é criptografado com uma chave e protegido por um escudo</title>
+                <defs>
+                  <linearGradient id="gC" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2f7bff"/><stop offset="1" stop-color="#19c3ff"/></linearGradient>
+                </defs>
+                <circle cx="200" cy="118" r="96" fill="none" stroke="rgba(47,123,255,.18)" stroke-dasharray="4 6"/>
+                <circle cx="200" cy="118" r="70" fill="none" stroke="rgba(25,195,255,.2)"/>
+                <path d="M200 58 L248 76 V114 C248 146 228 166 200 178 C172 166 152 146 152 114 V76 Z" fill="rgba(47,123,255,.14)" stroke="url(#gC)" stroke-width="2.5"/>
+                <rect x="184" y="108" width="32" height="26" rx="5" fill="url(#gC)"/>
+                <path d="M190 108 V99 a10 10 0 0 1 20 0 V108" fill="none" stroke="#19c3ff" stroke-width="3"/>
+                <circle cx="200" cy="120" r="3.5" fill="#05070e"/>
+                <rect x="198.5" y="121" width="3" height="7" rx="1.5" fill="#05070e"/>
+                <g font-family="JetBrains Mono, monospace" font-size="11">
+                  <rect x="12" y="214" width="112" height="30" rx="8" fill="rgba(255,255,255,.04)" stroke="rgba(255,255,255,.12)"/>
+                  <text x="68" y="233" fill="#c9d4ea" text-anchor="middle">"senha123"</text>
+                  <rect x="276" y="214" width="112" height="30" rx="8" fill="rgba(47,123,255,.12)" stroke="rgba(47,123,255,.4)"/>
+                  <text x="332" y="233" fill="#7fdcff" text-anchor="middle">9f$xK2@!qZ…</text>
+                  <text x="200" y="233" fill="#6f7a90" text-anchor="middle">→ chave →</text>
+                </g>
+              </svg>
+              <figcaption>Dado legível → criptografia → dado protegido</figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <div class="topic-grid topic-grid--3">
+          <article class="glass topic card-hover reveal">
+            <div class="topic__head"><span class="icon-box"><i class="bi bi-database-lock"></i></span><h4>Proteção de dados</h4></div>
+            <p>Envolve controlar quem acessa as informações, fazer backups e coletar apenas o necessário. No Brasil, a <strong>LGPD</strong> (Lei 13.709/2018) define regras para o tratamento de dados pessoais.</p>
+          </article>
+          <article class="glass topic card-hover reveal" style="--d:.05s">
+            <div class="topic__head"><span class="icon-box"><i class="bi bi-key"></i></span><h4>Criptografia</h4></div>
+            <p>Transforma dados legíveis em um formato ilegível sem a chave correta. Está no <strong>HTTPS</strong> (TLS), no armazenamento de senhas com <strong>hash</strong> (como bcrypt) e em mensageiros com criptografia de ponta a ponta.</p>
+          </article>
+          <article class="glass topic card-hover reveal" style="--d:.1s">
+            <div class="topic__head"><span class="icon-box"><i class="bi bi-person-badge"></i></span><h4>Autenticação</h4></div>
+            <p>Confirma que o usuário é quem diz ser. Vai além da senha: <strong>autenticação em dois fatores (2FA)</strong>, biometria e chaves de acesso (passkeys) tornam o login muito mais seguro.</p>
+          </article>
+          <article class="glass topic card-hover reveal">
+            <div class="topic__head"><span class="icon-box"><i class="bi bi-bug"></i></span><h4>Principais ameaças</h4></div>
+            <ul>
+              <li><strong>Phishing</strong>: golpes que imitam empresas para roubar dados.</li>
+              <li><strong>Ransomware</strong>: sequestra arquivos e pede resgate.</li>
+              <li><strong>Injeção de SQL e XSS</strong>: exploram entradas não validadas.</li>
+              <li><strong>Senhas fracas</strong> e reutilizadas.</li>
+            </ul>
+          </article>
+          <article class="glass topic card-hover reveal" style="--d:.05s">
+            <div class="topic__head"><span class="icon-box"><i class="bi bi-code-square"></i></span><h4>Importância para desenvolvedores</h4></div>
+            <p>Segurança começa no código: validar toda entrada do usuário, usar consultas preparadas no banco de dados, nunca guardar senhas em texto puro, manter dependências atualizadas e não expor credenciais no repositório.</p>
+          </article>
+          <article class="glass topic card-hover reveal" style="--d:.1s">
+            <div class="topic__head"><span class="icon-box"><i class="bi bi-shield-check"></i></span><h4>Segurança por padrão</h4></div>
+            <p>O ideal é pensar em segurança desde o planejamento (<em>security by design</em>), aplicando o princípio do menor privilégio: cada usuário e cada parte do sistema acessa apenas o que realmente precisa.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3.2 Blockchain -->
+    <section class="trend section--alt" id="blockchain" aria-labelledby="blockchainTitle">
+      <div class="container">
+        <div class="row g-4 g-lg-5 align-items-center flex-lg-row-reverse">
+          <div class="col-lg-7 reveal">
+            <span class="trend__badge"><i class="bi bi-boxes"></i> Tendência 02</span>
+            <h3 class="trend__title" id="blockchainTitle">Blockchain</h3>
+            <p class="trend__intro">
+              Blockchain é um registro digital distribuído, em que as informações são organizadas em <strong>blocos encadeados</strong>.
+              Cada bloco depende do anterior, formando uma corrente que pode ser verificada por todos os participantes da rede e que é
+              extremamente difícil de alterar depois de gravada.
+            </p>
+          </div>
+          <div class="col-lg-5 reveal" style="--d:.1s">
+            <figure class="illustration m-0">
+              <svg viewBox="0 0 400 230" role="img" aria-labelledby="svgBlockT">
+                <title id="svgBlockT">Ilustração: três blocos encadeados, cada um guardando o hash do anterior</title>
+                <defs>
+                  <linearGradient id="gB" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2f7bff"/><stop offset="1" stop-color="#19c3ff"/></linearGradient>
+                </defs>
+                <g font-family="JetBrains Mono, monospace" font-size="9.5">
+                  <g>
+                    <rect x="8" y="40" width="112" height="128" rx="12" fill="rgba(255,255,255,.035)" stroke="rgba(255,255,255,.14)"/>
+                    <rect x="8" y="40" width="112" height="26" rx="12" fill="rgba(47,123,255,.18)"/>
+                    <text x="64" y="57" fill="#cfe0ff" text-anchor="middle" font-size="10.5">Bloco #1</text>
+                    <text x="20" y="88" fill="#6f7a90">dados</text><text x="20" y="102" fill="#c9d4ea">A → B: 5</text>
+                    <text x="20" y="124" fill="#6f7a90">anterior</text><text x="20" y="138" fill="#c9d4ea">0000</text>
+                    <text x="20" y="158" fill="#7fdcff">hash: 8a3f</text>
+                  </g>
+                  <g>
+                    <rect x="144" y="40" width="112" height="128" rx="12" fill="rgba(255,255,255,.035)" stroke="rgba(255,255,255,.14)"/>
+                    <rect x="144" y="40" width="112" height="26" rx="12" fill="rgba(47,123,255,.18)"/>
+                    <text x="200" y="57" fill="#cfe0ff" text-anchor="middle" font-size="10.5">Bloco #2</text>
+                    <text x="156" y="88" fill="#6f7a90">dados</text><text x="156" y="102" fill="#c9d4ea">B → C: 2</text>
+                    <text x="156" y="124" fill="#6f7a90">anterior</text><text x="156" y="138" fill="#7fdcff">8a3f</text>
+                    <text x="156" y="158" fill="#7fdcff">hash: c71e</text>
+                  </g>
+                  <g>
+                    <rect x="280" y="40" width="112" height="128" rx="12" fill="rgba(47,123,255,.08)" stroke="url(#gB)" stroke-width="1.6"/>
+                    <rect x="280" y="40" width="112" height="26" rx="12" fill="rgba(47,123,255,.3)"/>
+                    <text x="336" y="57" fill="#fff" text-anchor="middle" font-size="10.5">Bloco #3</text>
+                    <text x="292" y="88" fill="#6f7a90">dados</text><text x="292" y="102" fill="#c9d4ea">C → A: 1</text>
+                    <text x="292" y="124" fill="#6f7a90">anterior</text><text x="292" y="138" fill="#7fdcff">c71e</text>
+                    <text x="292" y="158" fill="#7fdcff">hash: 04bd</text>
+                  </g>
+                </g>
+                <path d="M120 104 H144 M256 104 H280" stroke="url(#gB)" stroke-width="2.5"/>
+                <circle cx="132" cy="104" r="4" fill="#19c3ff"/><circle cx="268" cy="104" r="4" fill="#19c3ff"/>
+                <g fill="#2f7bff" opacity=".9">
+                  <circle cx="64" cy="205" r="6"/><circle cx="200" cy="212" r="6"/><circle cx="336" cy="205" r="6"/>
+                </g>
+                <path d="M64 205 L200 212 L336 205 M64 205 Q200 180 336 205" stroke="rgba(47,123,255,.35)" fill="none"/>
+                <text x="200" y="20" fill="#6f7a90" font-family="JetBrains Mono, monospace" font-size="10" text-anchor="middle">cada bloco guarda o hash do anterior</text>
+              </svg>
+              <figcaption>Blocos encadeados por hash + rede de nós</figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <div class="topic-grid">
+          <article class="glass topic card-hover reveal">
+            <div class="topic__head"><span class="icon-box"><i class="bi bi-link-45deg"></i></span><h4>Funcionamento dos blocos</h4></div>
+            <p>Cada bloco armazena um conjunto de dados (como transações), a data de criação, o seu próprio <strong>hash</strong> — uma “impressão digital” calculada a partir do conteúdo — e o hash do bloco anterior. Se alguém altera um bloco antigo, o hash dele muda e todos os blocos seguintes deixam de bater.</p>
+          </article>
+          <article class="glass topic card-hover reveal" style="--d:.05s">
+            <div class="topic__head"><span class="icon-box"><i class="bi bi-diagram-3"></i></span><h4>Descentralização</h4></div>
+            <p>Em vez de um único servidor controlar os dados, várias cópias do registro ficam espalhadas por computadores da rede (os <strong>nós</strong>). Um novo bloco só é aceito quando os participantes chegam a um acordo, por meio de um <strong>mecanismo de consenso</strong> como Proof of Work ou Proof of Stake.</p>
+          </article>
+          <article class="glass topic card-hover reveal">
+            <div class="topic__head"><span class="icon-box"><i class="bi bi-eye"></i></span><h4>Segurança e transparência</h4></div>
+            <p>A combinação de criptografia, encadeamento por hash e consenso torna o histórico praticamente imutável. Em blockchains públicas, qualquer pessoa pode auditar as transações. Ainda assim, a tecnologia não elimina riscos como golpes, perda de chaves privadas ou falhas em contratos inteligentes.</p>
+          </article>
+          <article class="glass topic card-hover reveal" style="--d:.05s">
+            <div class="topic__head"><span class="icon-box"><i class="bi bi-grid-1x2"></i></span><h4>Aplicações práticas</h4></div>
+            <ul>
+              <li>Criptomoedas, como o Bitcoin.</li>
+              <li><strong>Contratos inteligentes</strong> que se executam sozinhos.</li>
+              <li>Rastreamento de produtos na cadeia de suprimentos.</li>
+              <li>Registro e verificação de certificados e documentos.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3.3 Automação e Robótica -->
+    <section class="trend" id="automacao" aria-labelledby="automacaoTitle">
+      <div class="container">
+        <div class="row g-4 g-lg-5 align-items-center">
+          <div class="col-lg-7 reveal">
+            <span class="trend__badge"><i class="bi bi-robot"></i> Tendência 03</span>
+            <h3 class="trend__title" id="automacaoTitle">Automação e Robótica</h3>
+            <p class="trend__intro">
+              <strong>Automação</strong> é usar tecnologia para executar tarefas com pouca ou nenhuma intervenção humana.
+              <strong>Robótica</strong> é a área que projeta máquinas capazes de perceber o ambiente por meio de <strong>sensores</strong>,
+              tomar decisões com um <strong>controlador</strong> e agir no mundo físico por meio de <strong>atuadores</strong>, como motores.
+            </p>
+          </div>
+          <div class="col-lg-5 reveal" style="--d:.1s">
+            <figure class="illustration m-0">
+              <svg viewBox="0 0 400 240" role="img" aria-labelledby="svgAutoT">
+                <title id="svgAutoT">Ilustração: ciclo sensor, processamento com inteligência artificial e atuador de um braço robótico</title>
+                <defs>
+                  <linearGradient id="gA" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2f7bff"/><stop offset="1" stop-color="#19c3ff"/></linearGradient>
+                  <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#19c3ff"/></marker>
+                </defs>
+                <!-- braço robótico -->
+                <rect x="40" y="196" width="90" height="16" rx="6" fill="rgba(255,255,255,.08)" stroke="rgba(255,255,255,.16)"/>
+                <rect x="70" y="176" width="30" height="22" rx="5" fill="rgba(47,123,255,.25)" stroke="url(#gA)"/>
+                <line x1="85" y1="178" x2="62" y2="112" stroke="url(#gA)" stroke-width="12" stroke-linecap="round"/>
+                <line x1="62" y1="112" x2="122" y2="78" stroke="url(#gA)" stroke-width="10" stroke-linecap="round"/>
+                <circle cx="85" cy="178" r="9" fill="#0b1020" stroke="#19c3ff" stroke-width="2"/>
+                <circle cx="62" cy="112" r="8" fill="#0b1020" stroke="#19c3ff" stroke-width="2"/>
+                <path d="M122 78 l14 -8 M122 78 l14 8" stroke="#c9d4ea" stroke-width="3" stroke-linecap="round"/>
+                <!-- fluxo -->
+                <g font-family="JetBrains Mono, monospace" font-size="10.5" text-anchor="middle">
+                  <rect x="186" y="22" width="204" height="40" rx="10" fill="rgba(255,255,255,.04)" stroke="rgba(255,255,255,.14)"/>
+                  <text x="288" y="47" fill="#c9d4ea">1. Sensor · coleta dados</text>
+                  <rect x="186" y="100" width="204" height="40" rx="10" fill="rgba(47,123,255,.14)" stroke="url(#gA)"/>
+                  <text x="288" y="125" fill="#fff">2. Controlador / IA · decide</text>
+                  <rect x="186" y="178" width="204" height="40" rx="10" fill="rgba(255,255,255,.04)" stroke="rgba(255,255,255,.14)"/>
+                  <text x="288" y="203" fill="#c9d4ea">3. Atuador · executa</text>
+                </g>
+                <path d="M288 62 V96 M288 140 V174" stroke="#19c3ff" stroke-width="1.6" marker-end="url(#arr)"/>
+                <path d="M186 198 Q160 198 150 150 Q144 100 192 44" fill="none" stroke="rgba(25,195,255,.35)" stroke-dasharray="4 5" marker-end="url(#arr)"/>
+              </svg>
+              <figcaption>Perceber → decidir → agir (e repetir)</figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <div class="topic-grid">
+          <article class="glass topic card-hover reveal">
+            <div class="topic__head"><span class="icon-box"><i class="bi bi-gear-wide-connected"></i></span><h4>Automação de processos</h4></div>
+            <p>No mundo digital, a <strong>RPA</strong> (automação robótica de processos) usa “robôs de software” para repetir tarefas como preencher planilhas, emitir notas e enviar e-mails. Integrações entre sistemas — como o envio automático de notificações deste portfólio — também são automação.</p>
+          </article>
+          <article class="glass topic card-hover reveal" style="--d:.05s">
+            <div class="topic__head"><span class="icon-box"><i class="bi bi-building-gear"></i></span><h4>Robótica industrial</h4></div>
+            <p>Braços robóticos fazem soldagem, pintura, montagem e embalagem com precisão e velocidade constantes. Os <strong>cobots</strong> (robôs colaborativos) trabalham ao lado de pessoas com sensores de segurança. É um dos pilares da <strong>Indústria 4.0</strong>.</p>
+          </article>
+          <article class="glass topic card-hover reveal">
+            <div class="topic__head"><span class="icon-box"><i class="bi bi-stars"></i></span><h4>Inteligência artificial aplicada</h4></div>
+            <p>Com IA, as máquinas deixam de apenas seguir regras fixas e passam a reconhecer padrões. <strong>Visão computacional</strong> identifica peças com defeito, modelos de aprendizado de máquina preveem falhas em equipamentos e assistentes respondem a perguntas em linguagem natural.</p>
+          </article>
+          <article class="glass topic card-hover reveal" style="--d:.05s">
+            <div class="topic__head"><span class="icon-box"><i class="bi bi-house-gear"></i></span><h4>No cotidiano e nas empresas</h4></div>
+            <ul>
+              <li>Robôs aspiradores e casas inteligentes.</li>
+              <li>Caixas de autoatendimento e chatbots.</li>
+              <li>Armazéns com robôs que separam pedidos.</li>
+              <li>Máquinas agrícolas guiadas por GPS e drones.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3.4 Edge Computing -->
+    <section class="trend section--alt" id="edge" aria-labelledby="edgeTitle">
+      <div class="container">
+        <div class="row g-4 g-lg-5 align-items-center flex-lg-row-reverse">
+          <div class="col-lg-7 reveal">
+            <span class="trend__badge"><i class="bi bi-hdd-network"></i> Tendência 04</span>
+            <h3 class="trend__title" id="edgeTitle">Edge Computing</h3>
+            <p class="trend__intro">
+              Edge Computing (computação de borda) é um modelo em que os dados são <strong>processados perto de onde são gerados</strong>
+              — no próprio dispositivo, em um gateway local ou em um pequeno servidor próximo — em vez de viajarem todos até um data center
+              distante. A “borda” é a extremidade da rede, onde estão sensores, câmeras, celulares e máquinas.
+            </p>
+          </div>
+          <div class="col-lg-5 reveal" style="--d:.1s">
+            <figure class="illustration m-0">
+              <svg viewBox="0 0 400 268" role="img" aria-labelledby="svgEdgeT">
+                <title id="svgEdgeT">Ilustração: dispositivos enviam dados para um nó de borda próximo, que envia apenas o resumo para a nuvem</title>
+                <defs>
+                  <linearGradient id="gE" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2f7bff"/><stop offset="1" stop-color="#19c3ff"/></linearGradient>
+                </defs>
+                <!-- nuvem -->
+                <path d="M150 52 a22 22 0 0 1 40 -14 a28 28 0 0 1 52 8 a20 20 0 0 1 8 38 H156 a18 18 0 0 1 -6 -32 z" fill="rgba(255,255,255,.05)" stroke="rgba(255,255,255,.22)"/>
+                <text x="200" y="74" fill="#c9d4ea" font-family="JetBrains Mono, monospace" font-size="11" text-anchor="middle">Nuvem</text>
+                <!-- edge -->
+                <rect x="150" y="118" width="100" height="44" rx="12" fill="rgba(47,123,255,.18)" stroke="url(#gE)" stroke-width="1.8"/>
+                <text x="200" y="145" fill="#fff" font-family="JetBrains Mono, monospace" font-size="11" text-anchor="middle">Nó de borda</text>
+                <path d="M200 118 V88" stroke="rgba(255,255,255,.3)" stroke-dasharray="3 4"/>
+                <text x="210" y="106" fill="#6f7a90" font-family="JetBrains Mono, monospace" font-size="9">só o resumo</text>
+                <!-- devices -->
+                <g fill="rgba(255,255,255,.05)" stroke="rgba(255,255,255,.2)">
+                  <rect x="40" y="196" width="56" height="36" rx="8"/>
+                  <rect x="128" y="200" width="30" height="40" rx="6"/>
+                  <rect x="242" y="200" width="30" height="40" rx="6"/>
+                  <rect x="304" y="196" width="56" height="36" rx="8"/>
+                </g>
+                <g font-family="bootstrap-icons" font-size="15" fill="#19c3ff" text-anchor="middle">
+                  <circle cx="68" cy="214" r="7" fill="none" stroke="#19c3ff" stroke-width="1.6"/>
+                  <circle cx="68" cy="214" r="2.5"/>
+                  <circle cx="143" cy="232" r="2"/>
+                  <circle cx="257" cy="232" r="2"/>
+                  <path d="M318 222 l8 -10 l8 6 l10 -12" fill="none" stroke="#19c3ff" stroke-width="1.6"/>
+                </g>
+                <g stroke="#19c3ff" stroke-width="1.5" opacity=".75">
+                  <path d="M68 196 L170 162"/><path d="M143 200 L185 162"/><path d="M257 200 L215 162"/><path d="M332 196 L230 162"/>
+                </g>
+                <text x="200" y="262" fill="#7fdcff" font-family="JetBrains Mono, monospace" font-size="9.5" text-anchor="middle">latência baixa: resposta perto do usuário</text>
+              </svg>
+              <figcaption>Processa na borda, envia à nuvem só o necessário</figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <div class="row g-4 mt-1">
+          <div class="col-lg-6 reveal">
+            <div class="glass topic h-100">
+              <div class="topic__head"><span class="icon-box"><i class="bi bi-arrow-left-right"></i></span><h4>Edge Computing x Cloud Computing</h4></div>
+              <p>Os dois modelos não competem: eles se complementam. A borda resolve o que precisa de resposta imediata, e a nuvem cuida do que exige muito armazenamento e poder de processamento.</p>
+              <div class="table-scroll">
+                <table class="compare">
+                  <thead>
+                    <tr><th scope="col">Aspecto</th><th scope="col">Edge</th><th scope="col">Cloud</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>Onde processa</td><td class="hl">Perto da fonte dos dados</td><td>Data centers centralizados</td></tr>
+                    <tr><td>Latência</td><td class="hl">Muito baixa (milissegundos)</td><td>Maior, depende da distância</td></tr>
+                    <tr><td>Uso de internet</td><td class="hl">Envia só o essencial</td><td>Envia todos os dados</td></tr>
+                    <tr><td>Capacidade</td><td>Limitada ao hardware local</td><td class="hl">Praticamente ilimitada</td></tr>
+                    <tr><td>Melhor para</td><td class="hl">Decisões em tempo real</td><td class="hl">Análises e armazenamento em larga escala</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="topic-grid mt-0" style="grid-template-columns:1fr">
+              <article class="glass topic card-hover reveal" style="--d:.05s">
+                <div class="topic__head"><span class="icon-box"><i class="bi bi-speedometer2"></i></span><h4>Vantagens</h4></div>
+                <ul>
+                  <li><strong>Menor latência</strong>: respostas quase instantâneas.</li>
+                  <li><strong>Economia de banda</strong>: menos dados trafegando pela rede.</li>
+                  <li><strong>Funciona com conexão instável</strong> ou até offline.</li>
+                  <li><strong>Privacidade</strong>: dados sensíveis podem ficar no local.</li>
+                </ul>
+              </article>
+              <article class="glass topic card-hover reveal" style="--d:.1s">
+                <div class="topic__head"><span class="icon-box"><i class="bi bi-broadcast"></i></span><h4>Aplicações práticas</h4></div>
+                <ul>
+                  <li>Carros autônomos que precisam frear em frações de segundo.</li>
+                  <li>Indústrias que monitoram máquinas em tempo real (IoT).</li>
+                  <li>Câmeras inteligentes que analisam imagens no próprio aparelho.</li>
+                  <li>Redes 5G e jogos com baixa latência.</li>
+                </ul>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         PROJETOS
+         ========================================================= -->
+    <section class="section section--border" id="projetos" aria-labelledby="projetosTitle">
+      <div class="container">
+        <div class="row align-items-end mb-5 g-3">
+          <div class="col-lg-8 reveal">
+            <span class="eyebrow">04 · Galeria de Projetos</span>
+            <h2 class="section-title" id="projetosTitle">Projetos desenvolvidos no curso</h2>
+            <p class="section-lead mb-0">Projetos reais que estão no meu GitHub. As imagens abaixo são capturas de tela do sistema funcionando.</p>
+          </div>
+          <div class="col-lg-4 text-lg-end reveal">
+            <a class="btn btn-ghost d-inline-flex align-items-center gap-2" href="https://github.com/felps8890" target="_blank" rel="noopener">
+              <i class="bi bi-github"></i> Ver perfil no GitHub
+            </a>
+          </div>
+        </div>
+
+        <!-- Projeto em destaque: Pixel Store -->
+        <article class="glass project-featured reveal" aria-labelledby="pixelTitle">
+          <div class="row g-0">
+            <div class="col-lg-7">
+              <div class="project-featured__media">
+                <div class="browser">
+                  <div class="browser__bar"><span></span><span></span><span></span><div class="browser__url">localhost/pixelstore</div></div>
+                  <div id="pixelCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="4500">
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <img src="assets/images/projetos/pixel-store-loja.png" alt="Pixel Store: vitrine com filtros por categoria e cards de produtos" width="1366" height="820">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="assets/images/projetos/pixel-store-produto.png" alt="Pixel Store: página de detalhes de um produto" loading="lazy" width="1366" height="820">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="assets/images/projetos/pixel-store-admin.png" alt="Pixel Store: painel administrativo com resumo de receita, pedidos e estoque" loading="lazy" width="1366" height="820">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="shots-nav" role="group" aria-label="Escolher captura de tela">
+                  <button type="button" data-bs-target="#pixelCarousel" data-bs-slide-to="0" class="active" aria-current="true">Vitrine</button>
+                  <button type="button" data-bs-target="#pixelCarousel" data-bs-slide-to="1">Produto</button>
+                  <button type="button" data-bs-target="#pixelCarousel" data-bs-slide-to="2">Painel admin</button>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-5">
+              <div class="project-featured__body">
+                <span class="badge-featured"><i class="bi bi-star-fill"></i> Projeto em destaque</span>
+                <h3 id="pixelTitle">Pixel Store</h3>
+                <p>
+                  E-commerce de games e periféricos — consoles, jogos, periféricos e acessórios — desenvolvido em PHP com banco de dados MySQL.
+                  O sistema tem área do cliente e painel administrativo, com compras simuladas (nenhuma cobrança real é feita).
+                </p>
+                <ul class="feature-list">
+                  <li><i class="bi bi-check2-circle"></i> <span>Vitrine com busca, filtro por categoria e ordenação por nome, preço e novidades.</span></li>
+                  <li><i class="bi bi-check2-circle"></i> <span>Cadastro e login com senhas protegidas por <code>password_hash()</code>.</span></li>
+                  <li><i class="bi bi-check2-circle"></i> <span>Carrinho, checkout (Pix, boleto ou cartão simulados) e histórico “Meus pedidos”.</span></li>
+                  <li><i class="bi bi-check2-circle"></i> <span>Painel admin: receita, pedidos, estoque baixo e cadastro/edição de produtos.</span></li>
+                  <li><i class="bi bi-check2-circle"></i> <span>Segurança: consultas preparadas (PDO), tokens CSRF e credenciais em arquivo <code>.env</code>.</span></li>
+                </ul>
+                <div class="d-flex flex-wrap gap-2 mb-4">
+                  <span class="tag tag--accent">PHP</span>
+                  <span class="tag tag--accent">MySQL</span>
+                  <span class="tag">HTML5</span>
+                  <span class="tag">CSS3</span>
+                  <span class="tag">JavaScript</span>
+                  <span class="tag">Bootstrap 5</span>
+                </div>
+                <div class="d-flex flex-wrap gap-2">
+                  <button type="button" class="btn btn-accent d-inline-flex align-items-center gap-2" data-bs-toggle="modal" data-bs-target="#pixelModal">
+                    <i class="bi bi-eye"></i> Visualizar projeto
+                  </button>
+                  <a class="btn btn-ghost d-inline-flex align-items-center gap-2" href="https://github.com/felps8890/Pixel-store" target="_blank" rel="noopener">
+                    <i class="bi bi-github"></i> Código no GitHub
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Exercícios de aula -->
+        <h3 class="h5 mt-5 mb-4 reveal" style="font-family:var(--font-body);letter-spacing:0;color:var(--text-2)">
+          <i class="bi bi-folder2-open me-2" style="color:var(--accent-2)"></i>Outros repositórios — exercícios de aula
+        </h3>
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-4 reveal">
+            <article class="glass project-card card-hover">
+              <div class="project-card__preview">
+                <ul class="file-tree">
+                  <li><i class="bi bi-folder2 i-dir"></i> aula1910/</li>
+                  <li class="ps-3"><i class="bi bi-filetype-html i-html"></i> contato.html</li>
+                  <li class="ps-3"><i class="bi bi-filetype-html i-html"></i> Ch.html · Cn.html</li>
+                  <li class="ps-3"><i class="bi bi-filetype-html i-html"></i> Mat.html · Linguagens.html</li>
+                  <li class="ps-3"><i class="bi bi-filetype-css i-css"></i> estilos1.css</li>
+                </ul>
+              </div>
+              <div class="project-card__body">
+                <h3>Áreas do Conhecimento</h3>
+                <p>Site de várias páginas com uma página inicial que leva para Ciências Humanas, Ciências da Natureza, Matemática e Linguagens, estilizado com uma folha de estilos externa.</p>
+                <div class="d-flex flex-wrap gap-2 mb-3"><span class="tag">HTML5</span><span class="tag">CSS3</span></div>
+                <a class="btn btn-ghost btn-sm mt-auto align-self-start" href="https://github.com/felps8890/aula1910" target="_blank" rel="noopener"><i class="bi bi-github me-1"></i> Ver código</a>
+              </div>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-4 reveal" style="--d:.05s">
+            <article class="glass project-card card-hover">
+              <div class="project-card__preview">
+                <ul class="file-tree">
+                  <li><i class="bi bi-folder2 i-dir"></i> aula2610/</li>
+                  <li class="ps-3"><i class="bi bi-filetype-html i-html"></i> index.html</li>
+                  <li class="ps-3"><i class="bi bi-filetype-css i-css"></i> style.css</li>
+                  <li class="ps-3 text-muted-3"><i class="bi bi-box"></i> Bootstrap (CDN)</li>
+                </ul>
+              </div>
+              <div class="project-card__body">
+                <h3>Componentes com Bootstrap</h3>
+                <p>Exercício de layout com caixas de conteúdo, botões estilizados, card e carrossel de imagens usando componentes do Bootstrap junto com CSS próprio.</p>
+                <div class="d-flex flex-wrap gap-2 mb-3"><span class="tag">HTML5</span><span class="tag">CSS3</span><span class="tag">Bootstrap</span></div>
+                <a class="btn btn-ghost btn-sm mt-auto align-self-start" href="https://github.com/felps8890/aula2610" target="_blank" rel="noopener"><i class="bi bi-github me-1"></i> Ver código</a>
+              </div>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-4 reveal" style="--d:.1s">
+            <article class="glass project-card card-hover">
+              <div class="project-card__preview">
+                <ul class="file-tree">
+                  <li><i class="bi bi-folder2 i-dir"></i> hmtl/</li>
+                  <li class="ps-3"><i class="bi bi-filetype-html i-html"></i> index1.html</li>
+                  <li class="ps-3 text-muted-3">&lt;pre&gt; &lt;br&gt; &lt;img&gt;</li>
+                </ul>
+              </div>
+              <div class="project-card__body">
+                <h3>Primeiros passos em HTML</h3>
+                <p>Primeira aula: quebras de linha, texto pré-formatado com <code>&lt;pre&gt;</code> e posicionamento de imagem junto ao texto.</p>
+                <div class="d-flex flex-wrap gap-2 mb-3"><span class="tag">HTML5</span></div>
+                <a class="btn btn-ghost btn-sm mt-auto align-self-start" href="https://github.com/felps8890/hmtl" target="_blank" rel="noopener"><i class="bi bi-github me-1"></i> Ver código</a>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <!-- CTA GitHub -->
+        <div class="glass github-cta mt-5 reveal">
+          <div class="d-flex align-items-center gap-3">
+            <span class="github-cta__icon"><i class="bi bi-github"></i></span>
+            <div>
+              <h3 class="h5 mb-1">github.com/felps8890</h3>
+              <p class="mb-0" style="font-size:.95rem">Todos os meus repositórios públicos, incluindo este portfólio.</p>
+            </div>
+          </div>
+          <a class="btn btn-accent d-inline-flex align-items-center gap-2" href="https://github.com/felps8890?tab=repositories" target="_blank" rel="noopener">
+            Ver repositórios <i class="bi bi-box-arrow-up-right"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         CONTATO
+         ========================================================= -->
+    <section class="section section--alt section--border" id="contato" aria-labelledby="contatoTitle">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-lg-8 reveal">
+            <span class="eyebrow">05 · Contato</span>
+            <h2 class="section-title" id="contatoTitle">Vamos conversar?</h2>
+            <p class="section-lead">Tem uma oportunidade, uma dúvida ou um feedback sobre meus projetos? Envie uma mensagem — ela chega direto no meu e-mail.</p>
+          </div>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-lg-4 reveal">
+            <div class="glass contact-info">
+              <a class="contact-line" href="mailto:felipe.barsotti@gmail.com">
+                <span class="icon-box"><i class="bi bi-envelope"></i></span>
+                <div><small>E-mail</small><span>felipe.barsotti@gmail.com</span></div>
+              </a>
+              <a class="contact-line" href="https://github.com/felps8890" target="_blank" rel="noopener">
+                <span class="icon-box"><i class="bi bi-github"></i></span>
+                <div><small>GitHub</small><span>felps8890</span></div>
+              </a>
+              <div class="contact-line">
+                <span class="icon-box"><i class="bi bi-mortarboard"></i></span>
+                <div><small>Formação</small><span>Técnico em TI · 03TI3</span></div>
+              </div>
+              <div class="insight mt-3">
+                <i class="bi bi-shield-check"></i>
+                <span>Sua mensagem fica salva com segurança e eu recebo uma notificação por e-mail.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-8 reveal" style="--d:.08s">
+            <form class="glass contact-form" id="contactForm" novalidate aria-describedby="formAlert">
+              <div class="form-alert" id="formAlert" role="status" aria-live="polite"></div>
+
+              <!-- Honeypot anti-spam: campo invisível que pessoas não preenchem -->
+              <div class="hp-field" aria-hidden="true">
+                <label for="website">Não preencha este campo</label>
+                <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+              </div>
+
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label class="form-label" for="nome">Nome <span class="req">*</span></label>
+                  <input class="form-control" type="text" id="nome" name="nome" placeholder="Seu nome completo" autocomplete="name" maxlength="80" required>
+                  <div class="invalid-feedback" id="nome-erro"></div>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label" for="email">E-mail <span class="req">*</span></label>
+                  <input class="form-control" type="email" id="email" name="email" placeholder="voce@exemplo.com" autocomplete="email" maxlength="120" required>
+                  <div class="invalid-feedback" id="email-erro"></div>
+                </div>
+                <div class="col-12">
+                  <label class="form-label" for="assunto">Assunto <span class="req">*</span></label>
+                  <input class="form-control" type="text" id="assunto" name="assunto" placeholder="Sobre o que você quer falar?" maxlength="120" required>
+                  <div class="invalid-feedback" id="assunto-erro"></div>
+                </div>
+                <div class="col-12">
+                  <div class="d-flex justify-content-between align-items-end">
+                    <label class="form-label" for="mensagem">Mensagem <span class="req">*</span></label>
+                    <span class="char-count mb-2" id="charCount">0 / 2000</span>
+                  </div>
+                  <textarea class="form-control" id="mensagem" name="mensagem" rows="6" placeholder="Escreva sua mensagem…" maxlength="2000" required></textarea>
+                  <div class="invalid-feedback" id="mensagem-erro"></div>
+                </div>
+                <div class="col-12 d-flex flex-column flex-sm-row align-items-sm-center justify-content-between gap-3 mt-4">
+                  <small class="text-muted-3"><span class="req" style="color:var(--accent-2)">*</span> Campos obrigatórios</small>
+                  <button class="btn btn-accent d-inline-flex align-items-center justify-content-center gap-2" type="submit" id="submitBtn">
+                    <span class="btn-label"><i class="bi bi-send me-1"></i> Enviar mensagem</span>
+                    <span class="btn-loading d-none"><span class="spinner-border spinner-border-sm me-2" aria-hidden="true"></span>Enviando…</span>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================
+       FOOTER
+       ========================================================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row g-4 align-items-center">
+        <div class="col-lg-5">
+          <a class="brand mb-2" href="#inicio"><span class="brand__mark">FB</span><span>felipe<span class="brand__dot">.</span>dev</span></a>
+          <p class="mb-0 mt-2">Felipe Barsotti Prado de Carvalho · Técnico em TI · Turma 03TI3</p>
+        </div>
+        <div class="col-lg-4">
+          <ul class="footer-links">
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#conhecimento">Conhecimento</a></li>
+            <li><a href="#tendencias">Tendências</a></li>
+            <li><a href="#projetos">Projetos</a></li>
+            <li><a href="#contato">Contato</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 d-flex gap-2 justify-content-lg-end">
+          <a class="social-btn" href="https://github.com/felps8890" target="_blank" rel="noopener" aria-label="GitHub"><i class="bi bi-github"></i></a>
+          <a class="social-btn" href="mailto:felipe.barsotti@gmail.com" aria-label="Enviar e-mail"><i class="bi bi-envelope"></i></a>
+        </div>
+      </div>
+      <hr style="border-color:var(--border);opacity:1" class="my-4">
+      <div class="d-flex flex-column flex-md-row justify-content-between gap-2">
+        <small class="text-muted-3">© <span id="year">2026</span> Felipe Barsotti. Desenvolvido do zero com HTML5, CSS3, JavaScript e Bootstrap.</small>
+        <small class="text-muted-3 mono">Atividade Final · 4º Bimestre</small>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" type="button" aria-label="Voltar ao topo"><i class="bi bi-arrow-up"></i></button>
+
+  <!-- Modal: visualizar o projeto Pixel Store em tamanho grande -->
+  <div class="modal fade modal-dark" id="pixelModal" tabindex="-1" aria-labelledby="pixelModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="pixelModalTitle"><i class="bi bi-controller me-2" style="color:var(--accent-2)"></i>Pixel Store — capturas de tela</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+        </div>
+        <div class="modal-body">
+          <p class="text-muted-2" style="font-size:.92rem">
+            O Pixel Store é uma aplicação PHP + MySQL e precisa de um servidor (como o XAMPP) para rodar, por isso não fica hospedado no GitHub Pages.
+            As imagens abaixo foram capturadas com o projeto executando localmente a partir do código do repositório.
+          </p>
+          <div class="d-grid gap-4">
+            <figure class="m-0"><img class="lightbox-img w-100" src="assets/images/projetos/pixel-store-loja.png" alt="Vitrine do Pixel Store" loading="lazy"><figcaption class="text-muted-3 small mt-2">Vitrine com busca, categorias e ordenação</figcaption></figure>
+            <figure class="m-0"><img class="lightbox-img w-100" src="assets/images/projetos/pixel-store-produto.png" alt="Página de produto do Pixel Store" loading="lazy"><figcaption class="text-muted-3 small mt-2">Página de detalhes do produto</figcaption></figure>
+            <figure class="m-0"><img class="lightbox-img w-100" src="assets/images/projetos/pixel-store-admin.png" alt="Painel administrativo do Pixel Store" loading="lazy"><figcaption class="text-muted-3 small mt-2">Painel administrativo (resumo)</figcaption></figure>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <a class="btn btn-accent btn-sm" href="https://github.com/felps8890/Pixel-store" target="_blank" rel="noopener"><i class="bi bi-github me-1"></i> Abrir repositório</a>
+          <button type="button" class="btn btn-ghost btn-sm" data-bs-dismiss="modal">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts: Bootstrap → EmailJS → módulos do projeto -->
+  <script src="assets/vendor/bootstrap/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/emailjs/email.min.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/email.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

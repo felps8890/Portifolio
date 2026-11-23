@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Painel administrativo | Portfólio Felipe Barsotti</title>
+  <!-- Página oculta: não deve aparecer em buscadores -->
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#05070e">
+  <link rel="icon" href="../assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/vendor/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/vendor/bootstrap-icons/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/admin.css">
+</head>
+<body class="admin-body">
+
+  <!-- =========================================================
+       TELA DE ACESSO
+       Aviso: a senha fica no JavaScript do navegador, portanto NÃO é
+       uma proteção real. Serve apenas para o requisito acadêmico de
+       "acesso oculto". Veja o README para detalhes.
+       ========================================================= -->
+  <section class="gate" id="gate" aria-labelledby="gateTitle">
+    <div class="bg-grid"></div>
+    <div class="glow glow--1"></div>
+    <form class="glass gate__card" id="gateForm" novalidate>
+      <span class="brand__mark mb-4" style="width:48px;height:48px;font-size:1.05rem">FB</span>
+      <h1 class="h4 mb-1" id="gateTitle">Área administrativa</h1>
+      <p class="mb-4" style="font-size:.92rem">Acesso restrito ao gerenciamento das mensagens do portfólio.</p>
+      <label class="form-label" for="gatePassword">Senha de acesso</label>
+      <div class="input-group-pw">
+        <input class="form-control" type="password" id="gatePassword" autocomplete="current-password" placeholder="••••••••" required>
+        <button class="pw-toggle" type="button" id="pwToggle" aria-label="Mostrar senha"><i class="bi bi-eye"></i></button>
+      </div>
+      <div class="invalid-feedback d-block mt-2" id="gateError" role="alert"></div>
+      <button class="btn btn-accent w-100 mt-3" type="submit"><i class="bi bi-unlock me-2"></i>Entrar</button>
+      <a class="d-block text-center mt-3 small" href="../index.html"><i class="bi bi-arrow-left me-1"></i>Voltar ao portfólio</a>
+      <p class="gate__note"><i class="bi bi-info-circle me-1"></i>Proteção apenas demonstrativa (client-side). A senha está descrita no README.</p>
+    </form>
+  </section>
+
+  <!-- =========================================================
+       PAINEL
+       ========================================================= -->
+  <div class="admin d-none" id="adminApp">
+    <!-- Sidebar (desktop) / offcanvas (mobile) -->
+    <aside class="offcanvas-lg offcanvas-start admin-sidebar" tabindex="-1" id="adminSidebar" aria-label="Menu do painel">
+      <div class="admin-sidebar__inner">
+        <div class="d-flex align-items-center justify-content-between mb-4">
+          <a class="brand" href="../index.html"><span class="brand__mark">FB</span><span>admin<span class="brand__dot">.</span>panel</span></a>
+          <button type="button" class="btn-close btn-close-white d-lg-none" data-bs-dismiss="offcanvas" data-bs-target="#adminSidebar" aria-label="Fechar"></button>
+        </div>
+
+        <span class="side-label">Gerenciar</span>
+        <nav class="side-nav">
+          <a href="#dashboard" class="active"><i class="bi bi-grid-1x2"></i> Dashboard</a>
+          <a href="#mensagens"><i class="bi bi-inbox"></i> Mensagens <span class="side-count" id="sideCount">0</span></a>
+          <button type="button" data-action="novo"><i class="bi bi-plus-circle"></i> Nova mensagem</button>
+        </nav>
+
+        <span class="side-label">Dados (JSON)</span>
+        <nav class="side-nav">
+          <button type="button" data-action="ver-json"><i class="bi bi-braces"></i> Ver JSON</button>
+          <button type="button" data-action="exportar"><i class="bi bi-download"></i> Exportar JSON</button>
+          <button type="button" data-action="restaurar"><i class="bi bi-arrow-counterclockwise"></i> Restaurar 20 registros</button>
+        </nav>
+
+        <div class="mt-auto pt-4">
+          <div class="storage-info">
+            <small class="mono">localStorage</small>
+            <code id="storageKey">—</code>
+            <small id="storageSize">—</small>
+          </div>
+          <nav class="side-nav mt-3">
+            <a href="../index.html"><i class="bi bi-box-arrow-up-left"></i> Ver portfólio</a>
+            <button type="button" data-action="sair"><i class="bi bi-box-arrow-right"></i> Sair</button>
+          </nav>
+        </div>
+      </div>
+    </aside>
+
+    <div class="admin-main">
+      <!-- Topbar -->
+      <header class="admin-top">
+        <button class="nav-toggle d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#adminSidebar" aria-controls="adminSidebar" aria-label="Abrir menu"><i class="bi bi-list"></i></button>
+        <div>
+          <h1 class="h4 mb-0">Painel de mensagens</h1>
+          <small class="text-muted-3" id="todayLabel"></small>
+        </div>
+        <button class="btn btn-accent btn-sm ms-auto d-inline-flex align-items-center gap-2" type="button" data-action="novo">
+          <i class="bi bi-plus-lg"></i><span class="d-none d-sm-inline">Nova mensagem</span>
+        </button>
+      </header>
+
+      <main class="admin-content">
+        <!-- Dashboard -->
+        <section id="dashboard" aria-label="Resumo">
+          <div class="stats-grid">
+            <div class="glass stat">
+              <div class="stat__icon"><i class="bi bi-inbox"></i></div>
+              <span class="stat__label">Total de mensagens</span>
+              <strong class="stat__value" id="statTotal">0</strong>
+              <small class="stat__hint">Registros no LocalStorage</small>
+            </div>
+            <div class="glass stat">
+              <div class="stat__icon stat__icon--new"><i class="bi bi-envelope-exclamation"></i></div>
+              <span class="stat__label">Não lidas</span>
+              <strong class="stat__value" id="statNovas">0</strong>
+              <small class="stat__hint">Com status “nova”</small>
+            </div>
+            <div class="glass stat">
+              <div class="stat__icon stat__icon--week"><i class="bi bi-calendar-week"></i></div>
+              <span class="stat__label">Últimos 7 dias</span>
+              <strong class="stat__value" id="statSemana">0</strong>
+              <small class="stat__hint">Recebidas na semana</small>
+            </div>
+            <div class="glass stat">
+              <div class="stat__icon stat__icon--form"><i class="bi bi-ui-checks"></i></div>
+              <span class="stat__label">Pelo formulário</span>
+              <strong class="stat__value" id="statForm">0</strong>
+              <small class="stat__hint" id="statEmail">—</small>
+            </div>
+          </div>
+
+          <div class="row g-4 mt-1">
+            <div class="col-xl-7">
+              <div class="glass panel h-100">
+                <div class="panel__head">
+                  <h2 class="h6 mb-0"><i class="bi bi-clock-history me-2"></i>Mensagens recentes</h2>
+                  <a href="#mensagens" class="small">Ver todas</a>
+                </div>
+                <ul class="recent-list" id="recentList"></ul>
+              </div>
+            </div>
+            <div class="col-xl-5">
+              <div class="glass panel h-100">
+                <div class="panel__head">
+                  <h2 class="h6 mb-0"><i class="bi bi-bar-chart me-2"></i>Por status</h2>
+                </div>
+                <div class="status-bars" id="statusBars"></div>
+                <div class="panel__head mt-3 pt-3 border-top" style="border-color:var(--border)!important">
+                  <h2 class="h6 mb-0"><i class="bi bi-diagram-2 me-2"></i>Por origem</h2>
+                </div>
+                <div class="status-bars" id="origemBars"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Tabela de mensagens -->
+        <section id="mensagens" class="glass panel mt-4" aria-labelledby="mensagensTitle">
+          <div class="panel__head flex-wrap gap-2">
+            <h2 class="h6 mb-0" id="mensagensTitle"><i class="bi bi-table me-2"></i>Registros</h2>
+            <small class="text-muted-3" id="resultInfo"></small>
+          </div>
+
+          <div class="toolbar">
+            <div class="search">
+              <i class="bi bi-search"></i>
+              <input class="form-control" type="search" id="busca" placeholder="Pesquisar por nome, e-mail, assunto ou mensagem…" aria-label="Pesquisar mensagens">
+            </div>
+            <select class="form-select" id="filtroStatus" aria-label="Filtrar por status">
+              <option value="">Todos os status</option>
+              <option value="nova">Novas</option>
+              <option value="lida">Lidas</option>
+              <option value="respondida">Respondidas</option>
+            </select>
+            <select class="form-select" id="filtroOrigem" aria-label="Filtrar por origem">
+              <option value="">Todas as origens</option>
+              <option value="formulario">Formulário do site</option>
+              <option value="admin">Criadas no painel</option>
+              <option value="teste">Registros de teste</option>
+            </select>
+            <select class="form-select" id="filtroPeriodo" aria-label="Filtrar por período">
+              <option value="">Qualquer data</option>
+              <option value="1">Hoje</option>
+              <option value="7">Últimos 7 dias</option>
+              <option value="30">Últimos 30 dias</option>
+            </select>
+            <select class="form-select" id="ordenacao" aria-label="Ordenar">
+              <option value="recentes">Mais recentes</option>
+              <option value="antigas">Mais antigas</option>
+              <option value="nome">Nome (A-Z)</option>
+            </select>
+            <button class="btn btn-ghost btn-sm" type="button" id="limparFiltros" title="Limpar filtros"><i class="bi bi-x-lg"></i><span class="d-xl-none ms-1">Limpar</span></button>
+          </div>
+
+          <div class="table-responsive">
+            <table class="table admin-table align-middle mb-0">
+              <thead>
+                <tr>
+                  <th scope="col">Remetente</th>
+                  <th scope="col">Assunto</th>
+                  <th scope="col" class="d-none d-xxl-table-cell">Data</th>
+                  <th scope="col">Status</th>
+                  <th scope="col" class="text-end">Ações</th>
+                </tr>
+              </thead>
+              <tbody id="tabela"></tbody>
+            </table>
+          </div>
+          <div class="empty d-none" id="vazio">
+            <i class="bi bi-inbox"></i>
+            <p class="mb-0">Nenhuma mensagem encontrada com esses filtros.</p>
+          </div>
+
+          <nav class="pager" aria-label="Paginação" id="paginacao"></nav>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <!-- Modal: visualizar -->
+  <div class="modal fade modal-dark" id="modalVer" tabindex="-1" aria-labelledby="modalVerTitulo" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalVerTitulo">Mensagem</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+        </div>
+        <div class="modal-body" id="modalVerCorpo"></div>
+        <div class="modal-footer justify-content-between flex-wrap gap-2">
+          <div class="d-flex gap-2 flex-wrap">
+            <a class="btn btn-ghost btn-sm" id="btnResponder" href="#"><i class="bi bi-reply me-1"></i>Responder</a>
+            <select class="form-select form-select-sm w-auto" id="verStatus" aria-label="Alterar status">
+              <option value="nova">Nova</option>
+              <option value="lida">Lida</option>
+              <option value="respondida">Respondida</option>
+            </select>
+          </div>
+          <div class="d-flex gap-2">
+            <button class="btn btn-ghost btn-sm" type="button" id="btnVerEditar"><i class="bi bi-pencil me-1"></i>Editar</button>
+            <button class="btn btn-danger-soft btn-sm" type="button" id="btnVerExcluir"><i class="bi bi-trash me-1"></i>Excluir</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: criar / editar -->
+  <div class="modal fade modal-dark" id="modalForm" tabindex="-1" aria-labelledby="modalFormTitulo" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+      <form class="modal-content" id="formRegistro" novalidate>
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalFormTitulo">Nova mensagem</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+        </div>
+        <div class="modal-body">
+          <input type="hidden" id="regId">
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label class="form-label" for="regNome">Nome <span class="req">*</span></label>
+              <input class="form-control" id="regNome" name="nome" maxlength="80" required>
+              <div class="invalid-feedback" id="regNome-erro"></div>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label" for="regEmail">E-mail <span class="req">*</span></label>
+              <input class="form-control" id="regEmail" name="email" type="email" maxlength="120" required>
+              <div class="invalid-feedback" id="regEmail-erro"></div>
+            </div>
+            <div class="col-md-8">
+              <label class="form-label" for="regAssunto">Assunto <span class="req">*</span></label>
+              <input class="form-control" id="regAssunto" name="assunto" maxlength="120" required>
+              <div class="invalid-feedback" id="regAssunto-erro"></div>
+            </div>
+            <div class="col-md-4">
+              <label class="form-label" for="regStatus">Status</label>
+              <select class="form-select" id="regStatus" name="status">
+                <option value="nova">Nova</option>
+                <option value="lida">Lida</option>
+                <option value="respondida">Respondida</option>
+              </select>
+            </div>
+            <div class="col-12">
+              <label class="form-label" for="regMensagem">Mensagem <span class="req">*</span></label>
+              <textarea class="form-control" id="regMensagem" name="mensagem" rows="6" maxlength="2000" required></textarea>
+              <div class="invalid-feedback" id="regMensagem-erro"></div>
+            </div>
+          </div>
+          <p class="small text-muted-3 mt-3 mb-0" id="regMeta"></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-ghost btn-sm" data-bs-dismiss="modal">Cancelar</button>
+          <button type="submit" class="btn btn-accent btn-sm" id="regSalvar"><i class="bi bi-check2 me-1"></i>Salvar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal: confirmar exclusão -->
+  <div class="modal fade modal-dark" id="modalExcluir" tabindex="-1" aria-labelledby="modalExcluirTitulo" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body text-center p-4">
+          <div class="danger-icon mb-3"><i class="bi bi-trash3"></i></div>
+          <h5 id="modalExcluirTitulo">Excluir esta mensagem?</h5>
+          <p class="mb-0" id="excluirTexto">Esta ação não pode ser desfeita.</p>
+        </div>
+        <div class="modal-footer justify-content-center">
+          <button type="button" class="btn btn-ghost btn-sm" data-bs-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-danger-solid btn-sm" id="confirmarExcluir"><i class="bi bi-trash me-1"></i>Sim, excluir</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: confirmar restauração -->
+  <div class="modal fade modal-dark" id="modalRestaurar" tabindex="-1" aria-labelledby="modalRestaurarTitulo" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body text-center p-4">
+          <div class="danger-icon mb-3" style="color:var(--warning);background:rgba(245,181,68,.1);border-color:rgba(245,181,68,.3)"><i class="bi bi-arrow-counterclockwise"></i></div>
+          <h5 id="modalRestaurarTitulo">Restaurar os 20 registros de teste?</h5>
+          <p class="mb-0">Todas as mensagens atuais serão apagadas e substituídas pelos 20 registros de teste.</p>
+        </div>
+        <div class="modal-footer justify-content-center">
+          <button type="button" class="btn btn-ghost btn-sm" data-bs-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-accent btn-sm" id="confirmarRestaurar">Restaurar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: JSON -->
+  <div class="modal fade modal-dark" id="modalJson" tabindex="-1" aria-labelledby="modalJsonTitulo" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalJsonTitulo"><i class="bi bi-braces me-2"></i>Registros em JSON</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+        </div>
+        <div class="modal-body p-0"><pre class="json-view" id="jsonView"></pre></div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-ghost btn-sm" id="copiarJson"><i class="bi bi-clipboard me-1"></i>Copiar</button>
+          <button type="button" class="btn btn-accent btn-sm" data-action="exportar"><i class="bi bi-download me-1"></i>Baixar .json</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toasts de feedback -->
+  <div class="toast-container position-fixed bottom-0 end-0 p-3" id="toasts" aria-live="polite" aria-atomic="true"></div>
+
+  <script src="../assets/vendor/bootstrap/bootstrap.bundle.min.js"></script>
+  <script src="../js/storage.js"></script>
+  <script src="../js/admin.js"></script>
+</body>
+</html>
